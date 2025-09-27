@@ -1,8 +1,8 @@
 
-# Implementation Plan: [FEATURE]
+# Implementation Plan: .NET Messaging Learning Platform
 
-**Branch**: `[###-feature-name]` | **Date**: [DATE] | **Spec**: [link]
-**Input**: Feature specification from `/specs/[###-feature-name]/spec.md`
+**Branch**: `001-net-learning-project` | **Date**: 2025-09-27 | **Spec**: [spec.md](./spec.md)
+**Input**: Feature specification from `/home/den/git/example-amqt-mqtt-k6/specs/001-net-learning-project/spec.md`
 
 ## Execution Flow (/plan command scope)
 ```
@@ -31,23 +31,35 @@
 - Phase 3-4: Implementation execution (manual or via tools)
 
 ## Summary
-[Extract from feature spec: primary requirement + technical approach from research]
+Educational .NET platform demonstrating AMQP and MQTT messaging protocols with RabbitMQ broker integration, HTTP API publishers, message consumers, k6 performance testing, CLI management tools, and comprehensive Ukrainian documentation. The system teaches practical messaging patterns through progressive examples from basic pub/sub to advanced scenarios like request/reply and fan-out, with emphasis on Test-Driven Development and real-world production patterns.
 
 ## Technical Context
-**Language/Version**: [e.g., Python 3.11, Swift 5.9, Rust 1.75 or NEEDS CLARIFICATION]  
-**Primary Dependencies**: [e.g., FastAPI, UIKit, LLVM or NEEDS CLARIFICATION]  
-**Storage**: [if applicable, e.g., PostgreSQL, CoreData, files or N/A]  
-**Testing**: [e.g., pytest, XCTest, cargo test or NEEDS CLARIFICATION]  
-**Target Platform**: [e.g., Linux server, iOS 15+, WASM or NEEDS CLARIFICATION]
-**Project Type**: [single/web/mobile - determines source structure]  
-**Performance Goals**: [domain-specific, e.g., 1000 req/s, 10k lines/sec, 60 fps or NEEDS CLARIFICATION]  
-**Constraints**: [domain-specific, e.g., <200ms p95, <100MB memory, offline-capable or NEEDS CLARIFICATION]  
-**Scale/Scope**: [domain-specific, e.g., 10k users, 1M LOC, 50 screens or NEEDS CLARIFICATION]
+**Language/Version**: C# / .NET 8 LTS with latest language features  
+**Primary Dependencies**: RabbitMQ.Client (AMQP), MQTTnet (MQTT), ASP.NET Core (API), Serilog (logging), k6 (performance testing)  
+**Storage**: RabbitMQ message queues/exchanges, file-based configuration, structured logs  
+**Testing**: xUnit + Testcontainers (integration), k6 (performance), TDD mandatory per constitution  
+**Target Platform**: Docker containers on Linux, cross-platform .NET development
+**Project Type**: Single solution with multiple projects (publisher API, consumers, shared libraries)  
+**Performance Goals**: Educational baselines - 100 req/s API, 1000 msg/s brokers (learning-focused)  
+**Constraints**: Docker-only dependencies, Ukrainian documentation required, TDD non-negotiable  
+**Scale/Scope**: Learning project - 5-10 example scenarios, comprehensive documentation, progressive complexity
 
 ## Constitution Check
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+**✅ I. Protocol Learning Focus**: Platform demonstrates AMQP/MQTT practical patterns, real-world scenarios, connection management, QoS levels, topic routing. k6 tests validate protocol behavior under load.
+
+**✅ II. .NET Best Practices**: Modern C# async/await patterns, dependency injection, configuration patterns, structured logging. Uses official RabbitMQ.Client and MQTTnet libraries. Follows Microsoft conventions.
+
+**✅ III. Test-Driven Development (NON-NEGOTIABLE)**: TDD mandatory with Red-Green-Refactor cycle. Integration tests validate actual protocol communication, not mocks. Tests written before implementation.
+
+**✅ IV. Docker Containerization**: All services run in Docker containers with Docker Compose orchestration. No local dependencies beyond Docker and .NET SDK.
+
+**✅ V. Performance Observability**: k6 tests for every protocol scenario with meaningful metrics. Structured logging with correlation IDs. Grafana dashboards for protocol-specific metrics.
+
+**✅ Learning Requirements**: Progressive complexity examples, Ukrainian documentation, hands-on scenarios, real use cases (IoT telemetry, microservices, event sourcing).
+
+**✅ Development Standards**: .NET 8 LTS target, solution structure with separate projects, appsettings.json configuration, global exception handling, Serilog structured logging.
 
 ## Project Structure
 
@@ -63,50 +75,52 @@ specs/[###-feature]/
 ```
 
 ### Source Code (repository root)
-<!--
-  ACTION REQUIRED: Replace the placeholder tree below with the concrete layout
-  for this feature. Delete unused options and expand the chosen structure with
-  real paths (e.g., apps/admin, packages/something). The delivered plan must
-  not include Option labels.
--->
 ```
-# [REMOVE IF UNUSED] Option 1: Single project (DEFAULT)
+ExampleMessaging.sln                    # Solution file
 src/
-├── models/
-├── services/
-├── cli/
-└── lib/
+├── ExampleMessaging.Shared/            # Shared models and utilities
+│   ├── Models/
+│   ├── Configuration/
+│   └── Extensions/
+├── ExampleMessaging.Publisher.Api/     # HTTP API for publishing messages
+│   ├── Controllers/
+│   ├── Services/
+│   └── Program.cs
+├── ExampleMessaging.Amqp.Consumer/     # AMQP message consumer
+│   ├── Handlers/
+│   ├── Services/
+│   └── Program.cs
+├── ExampleMessaging.Mqtt.Consumer/     # MQTT message consumer
+│   ├── Handlers/
+│   ├── Services/
+│   └── Program.cs
+└── ExampleMessaging.Cli/               # CLI management tools
+    ├── Commands/
+    └── Program.cs
 
 tests/
-├── contract/
-├── integration/
-└── unit/
+├── ExampleMessaging.IntegrationTests/  # Protocol integration tests
+├── ExampleMessaging.ContractTests/     # API contract tests
+└── ExampleMessaging.UnitTests/         # Unit tests
 
-# [REMOVE IF UNUSED] Option 2: Web application (when "frontend" + "backend" detected)
-backend/
-├── src/
-│   ├── models/
-│   ├── services/
-│   └── api/
-└── tests/
+docker/
+├── docker-compose.yml                  # Complete environment
+├── rabbitmq/
+└── grafana/
 
-frontend/
-├── src/
-│   ├── components/
-│   ├── pages/
-│   └── services/
-└── tests/
+k6-tests/                               # Performance test scripts
+├── api-load-test.js
+├── amqp-performance.js
+└── mqtt-performance.js
 
-# [REMOVE IF UNUSED] Option 3: Mobile + API (when "iOS/Android" detected)
-api/
-└── [same as backend above]
-
-ios/ or android/
-└── [platform-specific structure: feature modules, UI flows, platform tests]
+docs/                                   # Ukrainian documentation
+├── README.ua.md
+├── amqp-concepts.ua.md
+├── mqtt-concepts.ua.md
+└── performance-testing.ua.md
 ```
 
-**Structure Decision**: [Document the selected structure and reference the real
-directories captured above]
+**Structure Decision**: Single .NET solution with multiple projects architecture chosen for educational clarity. Each messaging protocol has dedicated consumer projects (AMQP/MQTT) with shared models library. Publisher API provides HTTP endpoints for both protocols. CLI tools enable easy environment management. Docker Compose orchestrates complete learning environment with RabbitMQ, Grafana, and all .NET services.
 
 ## Phase 0: Outline & Research
 1. **Extract unknowns from Technical Context** above:
@@ -202,18 +216,18 @@ directories captured above]
 *This checklist is updated during execution flow*
 
 **Phase Status**:
-- [ ] Phase 0: Research complete (/plan command)
-- [ ] Phase 1: Design complete (/plan command)
-- [ ] Phase 2: Task planning complete (/plan command - describe approach only)
+- [x] Phase 0: Research complete (/plan command)
+- [x] Phase 1: Design complete (/plan command)
+- [x] Phase 2: Task planning complete (/plan command - describe approach only)
 - [ ] Phase 3: Tasks generated (/tasks command)
 - [ ] Phase 4: Implementation complete
 - [ ] Phase 5: Validation passed
 
 **Gate Status**:
-- [ ] Initial Constitution Check: PASS
-- [ ] Post-Design Constitution Check: PASS
-- [ ] All NEEDS CLARIFICATION resolved
-- [ ] Complexity deviations documented
+- [x] Initial Constitution Check: PASS
+- [x] Post-Design Constitution Check: PASS
+- [x] All NEEDS CLARIFICATION resolved (performance targets established in research)
+- [x] Complexity deviations documented (none required)
 
 ---
 *Based on Constitution v1.0.0 - See `/memory/constitution.md`*

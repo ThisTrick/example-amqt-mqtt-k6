@@ -1,0 +1,110 @@
+version: '3.8'
+
+services:
+  rabbitmq:
+    image: rabbitmq:3.13-management-alpine
+    container_name: rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: admin
+      RABBITMQ_DEFAULT_VHOST: /
+    ports:
+      - "5672:5672"   # AMQP port
+      - "15672:15672" # Management UI
+      - "1883:1883"   # MQTT port
+      - "15675:15675" # MQTT over WebSockets
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 30s
+      timeout: 30s
+      retries: 3
+    networks:
+      - messaging-network
+
+  # .NET Services
+  publisher-api:
+    build:
+      context: ..
+      dockerfile: src/ExampleMessaging.Publisher.Api/Dockerfile
+    container_name: publisher-api
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ConnectionStrings__RabbitMQ: "amqp://admin:admin@rabbitmq:5672/"
+      ConnectionStrings__MQTT: "mqtt://rabbitmq:1883"
+      RabbitMQ__HostName: "rabbitmq"
+      MQTT__Server: "rabbitmq"
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    networks:
+      - messaging-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  amqp-consumer:
+    build:
+      context: ..
+      dockerfile: src/ExampleMessaging.Amqp.Consumer/Dockerfile
+    container_name: amqp-consumer
+    environment:
+      DOTNET_ENVIRONMENT: Production
+      ConnectionStrings__RabbitMQ: "amqp://admin:admin@rabbitmq:5672/"
+      RabbitMQ__HostName: "rabbitmq"
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    networks:
+      - messaging-network
+    restart: unless-stopped
+
+  mqtt-consumer:
+    build:
+      context: ..
+      dockerfile: src/ExampleMessaging.Mqtt.Consumer/Dockerfile
+    container_name: mqtt-consumer
+    environment:
+      DOTNET_ENVIRONMENT: Production
+      ConnectionStrings__MQTT: "mqtt://rabbitmq:1883"
+      MQTT__Server: "rabbitmq"
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    networks:
+      - messaging-network
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:10.2.0
+    container_name: grafana
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: admin
+      GF_USERS_ALLOW_SIGN_UP: "false"
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
+    depends_on:
+      - rabbitmq
+      - publisher-api
+    networks:
+      - messaging-network
+
+volumes:
+  rabbitmq_data:
+  grafana_data:
+
+networks:
+  messaging-network:
+    driver: bridge

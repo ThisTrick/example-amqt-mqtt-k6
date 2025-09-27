@@ -1,0 +1,37 @@
+# Ignore all build output for all projects
+**/bin/
+**/obj/
+
+# Ignore CLI and API logs
+src/ExampleMessaging.Publisher.Api/logs/
+
+# Ignore test output
+/tests/**/bin/
+/tests/**/obj/
+
+# Ignore Rider, VSCode, and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Ignore user/project files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.sln.iml
+
+# Ignore Python venv
+.venv/
+venv/
+
+# Ignore logs
+*.log
+logs/
+
+# Ignore Docker override
+**/docker-compose.override.yml
+
+# Ignore test results
+TestResults/
