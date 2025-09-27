@@ -5,8 +5,8 @@
 - [x] T029 MqttController POST /mqtt/publish in `src/ExampleMessaging.Publisher.Api/Controllers/MqttController.cs`
 - [x] T030 HealthController GET /health in `src/ExampleMessaging.Publisher.Api/Controllers/HealthController.cs`
 - [x] T031 MetricsController GET /metrics in `src/ExampleMessaging.Publisher.Api/Controllers/MetricsController.cs`
-- [ ] T032 AmqpPublisherService in `src/ExampleMessaging.Publisher.Api/Services/AmqpPublisherService.cs`
-- [ ] T033 MqttPublisherService in `src/ExampleMessaging.Publisher.Api/Services/MqttPublisherService.cs` 
+- [x] T032 AmqpPublisherService in `src/ExampleMessaging.Publisher.Api/Services/AmqpPublisherService.cs`
+- [x] T033 MqttPublisherService in `src/ExampleMessaging.Publisher.Api/Services/MqttPublisherService.cs` 
 - [x] T034 Program.cs with DI, logging, configuration in `src/ExampleMessaging.Publisher.Api/Program.cs`le-amqt-mqtt-k6/specs/001-net-learning-project/`
 **Prerequisites**: plan.md (✓), research.md (✓), data-model.md (✓), contracts/ (✓), quickstart.md (✓)
 
@@ -141,16 +141,16 @@ Based on plan.md structure:
 ## Phase 3.5: Polish & Documentation
 
 ### Unit Tests
-- [ ] T057 [P] Unit tests for AmqpMessage validation in `tests/ExampleMessaging.UnitTests/Models/AmqpMessageTests.cs`
-- [ ] T058 [P] Unit tests for MqttMessage validation in `tests/ExampleMessaging.UnitTests/Models/MqttMessageTests.cs`
-- [ ] T059 [P] Unit tests for ConnectionInfo state transitions in `tests/ExampleMessaging.UnitTests/Models/ConnectionInfoTests.cs`
-- [ ] T060 [P] Unit tests for publisher services in `tests/ExampleMessaging.UnitTests/Services/`
+- [x] T057 [P] Unit tests for AmqpMessage validation in `tests/ExampleMessaging.UnitTests/Models/AmqpMessageTests.cs`
+- [x] T058 [P] Unit tests for MqttMessage validation in `tests/ExampleMessaging.UnitTests/Models/MqttMessageTests.cs`
+- [x] T059 [P] Unit tests for ConnectionInfo state transitions in `tests/ExampleMessaging.UnitTests/Models/ConnectionInfoTests.cs`
+- [x] T060 [P] Unit tests for publisher services in `tests/ExampleMessaging.UnitTests/Services/`
 
 ### Ukrainian Documentation
-- [ ] T061 [P] AMQP concepts guide in `docs/amqp-concepts.ua.md`
-- [ ] T062 [P] MQTT concepts guide in `docs/mqtt-concepts.ua.md`
-- [ ] T063 [P] Performance testing guide in `docs/performance-testing.ua.md`
-- [ ] T064 [P] Main README in `docs/README.ua.md`
+- [x] T061 [P] AMQP concepts guide in `docs/amqp-concepts.ua.md`
+- [x] T062 [P] MQTT concepts guide in `docs/mqtt-concepts.ua.md`
+- [x] T063 [P] Performance testing guide in `docs/performance-testing.ua.md`
+- [x] T064 [P] Main README in `docs/README.ua.md`
 
 ### Final Validation
 - [ ] T065 Run all integration tests with real RabbitMQ containers
