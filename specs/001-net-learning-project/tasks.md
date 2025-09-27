@@ -98,9 +98,9 @@ Based on plan.md structure:
 - [x] T029 MqttController POST /mqtt/publish in `src/ExampleMessaging.Publisher.Api/Controllers/MqttController.cs`
 - [x] T030 HealthController GET /health in `src/ExampleMessaging.Publisher.Api/Controllers/HealthController.cs`
 - [x] T031 MetricsController GET /metrics in `src/ExampleMessaging.Publisher.Api/Controllers/MetricsController.cs`
-- [ ] T032 AmqpPublisherService in `src/ExampleMessaging.Publisher.Api/Services/AmqpPublisherService.cs`
-- [ ] T033 MqttPublisherService in `src/ExampleMessaging.Publisher.Api/Services/MqttPublisherService.cs`
-- [ ] T034 Program.cs with DI, logging, configuration in `src/ExampleMessaging.Publisher.Api/Program.cs`
+- [x] T032 AmqpPublisherService in `src/ExampleMessaging.Publisher.Api/Services/AmqpPublisherService.cs`
+- [x] T033 MqttPublisherService in `src/ExampleMessaging.Publisher.Api/Services/MqttPublisherService.cs`
+- [x] T034 Program.cs with DI, logging, configuration in `src/ExampleMessaging.Publisher.Api/Program.cs`
 
 ### AMQP Consumer
 - [ ] T035 [P] AmqpConnectionService in `src/ExampleMessaging.Amqp.Consumer/Services/AmqpConnectionService.cs`

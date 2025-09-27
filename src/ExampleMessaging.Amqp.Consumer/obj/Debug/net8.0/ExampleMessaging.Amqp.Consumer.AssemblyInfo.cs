@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ExampleMessaging.Amqp.Consumer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d6f783084ddd263ec8356ac6d6edd8ebbdceb5ae")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b4a0d03ae58a86cf51031e01a8054da7d69d3150")]
 [assembly: System.Reflection.AssemblyProductAttribute("ExampleMessaging.Amqp.Consumer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ExampleMessaging.Amqp.Consumer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
