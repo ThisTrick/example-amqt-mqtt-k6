@@ -31,3 +31,15 @@
 /home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Publisher.Api/obj/Debug/net8.0/ExampleMessaging.Publisher.Api.pdb
 /home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Publisher.Api/obj/Debug/net8.0/ExampleMessaging.Publisher.Api.genruntimeconfig.cache
 /home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Publisher.Api/obj/Debug/net8.0/ref/ExampleMessaging.Publisher.Api.dll
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Publisher.Api/bin/Debug/net8.0/appsettings.Production.json
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Publisher.Api/bin/Debug/net8.0/MQTTnet.dll
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Publisher.Api/bin/Debug/net8.0/RabbitMQ.Client.dll
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Publisher.Api/bin/Debug/net8.0/Serilog.dll
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Publisher.Api/bin/Debug/net8.0/Serilog.Enrichers.Environment.dll
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Publisher.Api/bin/Debug/net8.0/Serilog.Enrichers.Thread.dll
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Publisher.Api/bin/Debug/net8.0/Serilog.Extensions.Hosting.dll
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Publisher.Api/bin/Debug/net8.0/Serilog.Extensions.Logging.dll
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Publisher.Api/bin/Debug/net8.0/Serilog.Sinks.Console.dll
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Publisher.Api/bin/Debug/net8.0/Serilog.Sinks.File.dll
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Publisher.Api/bin/Debug/net8.0/ExampleMessaging.Shared.dll
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Publisher.Api/bin/Debug/net8.0/ExampleMessaging.Shared.pdb

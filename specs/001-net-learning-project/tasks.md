@@ -1,6 +1,13 @@
 # Tasks: .NET Messaging Learning Platform
 
-**Input**: Design documents from `/home/den/git/example-amqt-mqtt-k6/specs/001-net-learning-project/`
+**Input**: Design documents from `/home/den/g### Publisher API (HTTP Endpoints)
+- [x] T028 AmqpController POST /amqp/publish in `src/ExampleMessaging.Publisher.Api/Controllers/AmqpController.cs`
+- [x] T029 MqttController POST /mqtt/publish in `src/ExampleMessaging.Publisher.Api/Controllers/MqttController.cs`
+- [x] T030 HealthController GET /health in `src/ExampleMessaging.Publisher.Api/Controllers/HealthController.cs`
+- [x] T031 MetricsController GET /metrics in `src/ExampleMessaging.Publisher.Api/Controllers/MetricsController.cs`
+- [ ] T032 AmqpPublisherService in `src/ExampleMessaging.Publisher.Api/Services/AmqpPublisherService.cs`
+- [ ] T033 MqttPublisherService in `src/ExampleMessaging.Publisher.Api/Services/MqttPublisherService.cs` 
+- [x] T034 Program.cs with DI, logging, configuration in `src/ExampleMessaging.Publisher.Api/Program.cs`le-amqt-mqtt-k6/specs/001-net-learning-project/`
 **Prerequisites**: plan.md (✓), research.md (✓), data-model.md (✓), contracts/ (✓), quickstart.md (✓)
 
 ## Execution Flow (main)
@@ -114,22 +121,22 @@ Based on plan.md structure:
 ## Phase 3.4: Integration & Infrastructure
 
 ### Configuration & Logging
-- [ ] T045 Serilog structured logging configuration across all projects
-- [ ] T046 appsettings.json with RabbitMQ, MQTT connection strings per environment
-- [ ] T047 Global exception handling middleware in Publisher API
-- [ ] T048 Correlation ID tracking across services
+- [x] T045 Serilog structured logging configuration across all projects
+- [x] T046 appsettings.json with RabbitMQ, MQTT connection strings per environment
+- [x] T047 Global exception handling middleware in Publisher API
+- [x] T048 Correlation ID tracking across services
 
 ### Docker & Orchestration
-- [ ] T049 Dockerfile for Publisher API in `src/ExampleMessaging.Publisher.Api/Dockerfile`
-- [ ] T050 [P] Dockerfile for AMQP Consumer in `src/ExampleMessaging.Amqp.Consumer/Dockerfile`
-- [ ] T051 [P] Dockerfile for MQTT Consumer in `src/ExampleMessaging.Mqtt.Consumer/Dockerfile`
-- [ ] T052 Update docker-compose.yml to include .NET services with proper networking
+- [x] T049 Dockerfile for Publisher API in `src/ExampleMessaging.Publisher.Api/Dockerfile`
+- [x] T050 [P] Dockerfile for AMQP Consumer in `src/ExampleMessaging.Amqp.Consumer/Dockerfile`
+- [x] T051 [P] Dockerfile for MQTT Consumer in `src/ExampleMessaging.Mqtt.Consumer/Dockerfile`
+- [x] T052 Update docker-compose.yml to include .NET services with proper networking
 
 ### Performance Testing
-- [ ] T053 [P] k6 API load test script in `k6-tests/api-load-test.js`
-- [ ] T054 [P] k6 AMQP performance test script in `k6-tests/amqp-performance.js`  
-- [ ] T055 [P] k6 MQTT performance test script in `k6-tests/mqtt-performance.js`
-- [ ] T056 Grafana dashboard configuration for messaging metrics
+- [x] T053 [P] k6 API load test script in `k6-tests/api-load-test.js`
+- [x] T054 [P] k6 AMQP performance test script in `k6-tests/amqp-performance.js`  
+- [x] T055 [P] k6 MQTT performance test script in `k6-tests/mqtt-performance.js`
+- [x] T056 Grafana dashboard configuration for messaging metrics
 
 ## Phase 3.5: Polish & Documentation
 
