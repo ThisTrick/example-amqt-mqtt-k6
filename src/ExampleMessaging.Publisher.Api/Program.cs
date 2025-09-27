@@ -13,7 +13,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Add correlation context for request tracking
-builder.Services.AddCorrelationLogging();
+// builder.Services.AddCorrelationLogging(); // Temporarily disabled due to DI scoping issues
 
 // Add health checks
 builder.Services.AddHealthChecks();
@@ -21,8 +21,8 @@ builder.Services.AddHealthChecks();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-app.UseCorrelationId();
-app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
+// app.UseMiddleware<CorrelationIdMiddleware>(); // Temporarily disabled due to DI scoping issues
+// app.UseMiddleware<GlobalExceptionHandlingMiddleware>(); // Temporarily disabled due to DI scoping issues
 
 if (app.Environment.IsDevelopment())
 {

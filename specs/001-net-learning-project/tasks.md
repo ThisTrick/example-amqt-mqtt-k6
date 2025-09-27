@@ -1,7 +1,11 @@
 # Tasks: .NET Messaging Learning Platform
 
 **Input**: Design documents from `/home/den/g### Publisher API (HTTP Endpoints)
-- [x] T028 AmqpController POST /amqp/publish in `src/ExampleMessaging.Publisher.Api/Controllers/AmqpController.cs`
+- [x] T028 AmqpController POST ### Final Validation
+- [x] T065 Run all integration tests with real RabbitMQ containers
+- [x] T066 Execute quickstart.md validation scenarios
+- [x] T067 Performance benchmarking: meet 100 req/s API, 1000 msg/s broker targets
+- [x] T068 Code cleanup and refactoring for educational clarity/publish in `src/ExampleMessaging.Publisher.Api/Controllers/AmqpController.cs`
 - [x] T029 MqttController POST /mqtt/publish in `src/ExampleMessaging.Publisher.Api/Controllers/MqttController.cs`
 - [x] T030 HealthController GET /health in `src/ExampleMessaging.Publisher.Api/Controllers/HealthController.cs`
 - [x] T031 MetricsController GET /metrics in `src/ExampleMessaging.Publisher.Api/Controllers/MetricsController.cs`
@@ -115,8 +119,8 @@ Based on plan.md structure:
 ### CLI Management Tools
 - [x] T041 [P] StartCommand for environment startup in `src/ExampleMessaging.Cli/Commands/StartCommand.cs`
 - [x] T042 [P] TestCommand for k6 scenario execution in `src/ExampleMessaging.Cli/Commands/TestCommand.cs`
-- [ ] T043 [P] StatusCommand for service health monitoring in `src/ExampleMessaging.Cli/Commands/StatusCommand.cs`
-- [ ] T044 [P] Program.cs with command parsing in `src/ExampleMessaging.Cli/Program.cs`
+- [x] T043 [P] StatusCommand for service health monitoring in `src/ExampleMessaging.Cli/Commands/StatusCommand.cs`
+- [x] T044 [P] Program.cs with command parsing in `src/ExampleMessaging.Cli/Program.cs`
 
 ## Phase 3.4: Integration & Infrastructure
 
@@ -153,8 +157,8 @@ Based on plan.md structure:
 - [x] T064 [P] Main README in `docs/README.ua.md`
 
 ### Final Validation
-- [ ] T065 Run all integration tests with real RabbitMQ containers
-- [ ] T066 Execute quickstart.md validation scenarios
+- [x] T065 Run all integration tests with real RabbitMQ containers
+- [x] T066 Execute quickstart.md validation scenarios
 - [ ] T067 Performance benchmarking: meet 100 req/s API, 1000 msg/s broker targets
 - [ ] T068 Code cleanup and refactoring for educational clarity
 

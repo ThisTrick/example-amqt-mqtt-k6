@@ -4,21 +4,14 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 # Set working directory
 WORKDIR /app
 
-# Copy solution file and project files
-COPY *.sln .
-COPY src/ExampleMessaging.Shared/*.csproj ./src/ExampleMessaging.Shared/
-COPY src/ExampleMessaging.Publisher.Api/*.csproj ./src/ExampleMessaging.Publisher.Api/
-
-# Restore dependencies
-RUN dotnet restore
-
-# Copy source code
+# Copy all source code
 COPY src/ExampleMessaging.Shared/ ./src/ExampleMessaging.Shared/
 COPY src/ExampleMessaging.Publisher.Api/ ./src/ExampleMessaging.Publisher.Api/
 
 # Build the application
 WORKDIR /app/src/ExampleMessaging.Publisher.Api
-RUN dotnet publish -c Release -o /app/publish --no-restore
+RUN dotnet restore
+RUN dotnet publish -c Release -o /app/publish
 
 # Use the official .NET 8 runtime image for running
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime

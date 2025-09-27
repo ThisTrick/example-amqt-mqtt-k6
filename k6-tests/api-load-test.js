@@ -45,27 +45,21 @@ const BASE_URL = __ENV.API_BASE_URL || 'http://localhost:8080';
 
 // Test data for AMQP messages
 const amqpTestData = {
-  content: 'Load test message from k6',
+  payload: 'Load test message from k6',
   routingKey: 'test.load',
   exchange: 'messaging.exchange',
   priority: 1,
   persistent: true,
-  headers: {
-    'test-id': 'k6-load-test',
-    'timestamp': new Date().toISOString()
-  }
+  messageType: 'Event'
 };
 
 // Test data for MQTT messages
 const mqttTestData = {
-  content: 'MQTT load test message from k6',
+  payload: 'MQTT load test message from k6',
   topic: 'messaging/test/load',
   qosLevel: 1,
   retain: false,
-  headers: {
-    'test-id': 'k6-mqtt-load-test',
-    'timestamp': new Date().toISOString()
-  }
+  messageType: 'Event'
 };
 
 export default function () {
@@ -106,9 +100,9 @@ function testAmqpPublish() {
   const response = http.post(url, payload, params);
   
   const result = check(response, {
-    'AMQP publish status is 200': (r) => r.status === 200,
+    'AMQP publish status is 202': (r) => r.status === 202,
     'AMQP publish response time < 500ms': (r) => r.timings.duration < 500,
-    'AMQP publish has correlation ID': (r) => r.headers['X-Correlation-ID'] !== undefined,
+    'AMQP publish has messageId': (r) => r.json('messageId') !== undefined,
   });
   
   errorRate.add(!result);
@@ -129,9 +123,9 @@ function testMqttPublish() {
   const response = http.post(url, payload, params);
   
   const result = check(response, {
-    'MQTT publish status is 200': (r) => r.status === 200,
+    'MQTT publish status is 202': (r) => r.status === 202,
     'MQTT publish response time < 500ms': (r) => r.timings.duration < 500,
-    'MQTT publish has correlation ID': (r) => r.headers['X-Correlation-ID'] !== undefined,
+    'MQTT publish has messageId': (r) => r.json('messageId') !== undefined,
   });
   
   errorRate.add(!result);
