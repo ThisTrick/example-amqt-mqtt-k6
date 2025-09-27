@@ -1,0 +1,6 @@
+@ExampleMessaging.Publisher.Api_HostAddress = http://localhost:5096
+
+GET {{ExampleMessaging.Publisher.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

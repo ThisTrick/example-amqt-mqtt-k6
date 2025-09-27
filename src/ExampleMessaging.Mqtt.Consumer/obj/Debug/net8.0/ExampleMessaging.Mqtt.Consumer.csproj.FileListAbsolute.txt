@@ -1,0 +1,14 @@
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Mqtt.Consumer/bin/Debug/net8.0/ExampleMessaging.Mqtt.Consumer
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Mqtt.Consumer/bin/Debug/net8.0/ExampleMessaging.Mqtt.Consumer.deps.json
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Mqtt.Consumer/bin/Debug/net8.0/ExampleMessaging.Mqtt.Consumer.runtimeconfig.json
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Mqtt.Consumer/bin/Debug/net8.0/ExampleMessaging.Mqtt.Consumer.dll
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Mqtt.Consumer/bin/Debug/net8.0/ExampleMessaging.Mqtt.Consumer.pdb
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Mqtt.Consumer/obj/Debug/net8.0/ExampleMessaging.Mqtt.Consumer.GeneratedMSBuildEditorConfig.editorconfig
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Mqtt.Consumer/obj/Debug/net8.0/ExampleMessaging.Mqtt.Consumer.AssemblyInfoInputs.cache
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Mqtt.Consumer/obj/Debug/net8.0/ExampleMessaging.Mqtt.Consumer.AssemblyInfo.cs
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Mqtt.Consumer/obj/Debug/net8.0/ExampleMessaging.Mqtt.Consumer.csproj.CoreCompileInputs.cache
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Mqtt.Consumer/obj/Debug/net8.0/ExampleMessaging.Mqtt.Consumer.dll
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Mqtt.Consumer/obj/Debug/net8.0/refint/ExampleMessaging.Mqtt.Consumer.dll
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Mqtt.Consumer/obj/Debug/net8.0/ExampleMessaging.Mqtt.Consumer.pdb
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Mqtt.Consumer/obj/Debug/net8.0/ExampleMessaging.Mqtt.Consumer.genruntimeconfig.cache
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Mqtt.Consumer/obj/Debug/net8.0/ref/ExampleMessaging.Mqtt.Consumer.dll

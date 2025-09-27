@@ -1,0 +1,295 @@
+openapi: 3.0.3
+info:
+  title: Messaging Learning Platform API
+  description: HTTP API for publishing messages via AMQP and MQTT protocols for educational purposes
+  version: 1.0.0
+  contact:
+    name: Learning Platform
+    
+servers:
+  - url: http://localhost:5000
+    description: Local development server
+
+paths:
+  /health:
+    get:
+      summary: Health check endpoint
+      description: Returns service health status and broker connectivity
+      responses:
+        '200':
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HealthResponse'
+        '503':
+          description: Service or dependencies unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /amqp/publish:
+    post:
+      summary: Publish message via AMQP
+      description: Sends a message to RabbitMQ exchange with routing key
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AmqpPublishRequest'
+      responses:
+        '202':
+          description: Message accepted for publishing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PublishResponse'
+        '400':
+          description: Invalid request format
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '503':
+          description: AMQP broker unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /mqtt/publish:
+    post:
+      summary: Publish message via MQTT
+      description: Sends a message to MQTT topic with specified QoS level
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MqttPublishRequest'
+      responses:
+        '202':
+          description: Message accepted for publishing
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PublishResponse'
+        '400':
+          description: Invalid request format
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '503':
+          description: MQTT broker unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /metrics:
+    get:
+      summary: Get performance metrics
+      description: Returns current system performance metrics
+      responses:
+        '200':
+          description: Current metrics
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MetricsResponse'
+
+components:
+  schemas:
+    AmqpPublishRequest:
+      type: object
+      required:
+        - payload
+        - exchange
+        - routingKey
+      properties:
+        payload:
+          type: string
+          description: Message content
+          maxLength: 65536
+          example: "Hello AMQP World!"
+        exchange:
+          type: string
+          description: Target exchange name
+          pattern: '^[a-zA-Z0-9._-]+$'
+          example: "learning.direct"
+        routingKey:
+          type: string
+          description: AMQP routing key
+          pattern: '^[a-zA-Z0-9._-]*$'
+          example: "orders.created"
+        correlationId:
+          type: string
+          format: uuid
+          description: Request correlation identifier
+        messageType:
+          type: string
+          enum: [Event, Command, Query]
+          default: Event
+        priority:
+          type: integer
+          minimum: 0
+          maximum: 255
+          default: 0
+        persistent:
+          type: boolean
+          default: true
+          description: Message durability flag
+        expiration:
+          type: integer
+          minimum: 1000
+          maximum: 3600000
+          description: TTL in milliseconds
+
+    MqttPublishRequest:
+      type: object
+      required:
+        - payload
+        - topic
+      properties:
+        payload:
+          type: string
+          description: Message content
+          maxLength: 65536
+          example: "Hello MQTT World!"
+        topic:
+          type: string
+          description: MQTT topic path
+          pattern: '^[^+#]*$'
+          example: "sensors/temperature/room1"
+        correlationId:
+          type: string
+          format: uuid
+          description: Request correlation identifier
+        messageType:
+          type: string
+          enum: [Event, Command, Query]
+          default: Event
+        qosLevel:
+          type: integer
+          enum: [0, 1, 2]
+          default: 1
+          description: Quality of Service level
+        retain:
+          type: boolean
+          default: false
+          description: Retained message flag
+
+    PublishResponse:
+      type: object
+      properties:
+        messageId:
+          type: string
+          format: uuid
+          description: Unique message identifier
+        correlationId:
+          type: string
+          format: uuid
+          description: Request correlation identifier
+        timestamp:
+          type: string
+          format: date-time
+          description: Message creation timestamp
+        status:
+          type: string
+          enum: [Accepted, Published, Failed]
+          description: Publishing status
+
+    HealthResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum: [Healthy, Degraded, Unhealthy]
+        timestamp:
+          type: string
+          format: date-time
+        services:
+          type: object
+          properties:
+            amqp:
+              $ref: '#/components/schemas/ServiceHealth'
+            mqtt:
+              $ref: '#/components/schemas/ServiceHealth'
+
+    ServiceHealth:
+      type: object
+      properties:
+        status:
+          type: string
+          enum: [Connected, Disconnected, Failed]
+        lastCheck:
+          type: string
+          format: date-time
+        responseTime:
+          type: number
+          description: Health check response time in milliseconds
+
+    MetricsResponse:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+        http:
+          type: object
+          properties:
+            requestsPerSecond:
+              type: number
+            averageResponseTime:
+              type: number
+            errorRate:
+              type: number
+        amqp:
+          type: object
+          properties:
+            messagesPerSecond:
+              type: number
+            activeConnections:
+              type: integer
+            queueDepth:
+              type: integer
+        mqtt:
+          type: object
+          properties:
+            messagesPerSecond:
+              type: number
+            activeConnections:
+              type: integer
+            subscriptions:
+              type: integer
+        system:
+          type: object
+          properties:
+            cpuUsage:
+              type: number
+            memoryUsage:
+              type: integer
+            diskUsage:
+              type: number
+
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Error message
+        code:
+          type: string
+          description: Error code
+        timestamp:
+          type: string
+          format: date-time
+        correlationId:
+          type: string
+          format: uuid
+        details:
+          type: object
+          description: Additional error context

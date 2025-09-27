@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "dgSpecHash": "Vxs3hpvUMNfvp0MU0oUcxsLCEfxtA9nI3u9xXXzNwwoJH/E1oCeBHvphw/33uzYoaevNDotgRw2+FKyCDk9twQ==",
+  "success": true,
+  "projectFilePath": "/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Mqtt.Consumer/ExampleMessaging.Mqtt.Consumer.csproj",
+  "expectedPackageFiles": [],
+  "logs": []
+}

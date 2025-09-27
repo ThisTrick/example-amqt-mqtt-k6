@@ -1,0 +1,14 @@
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Amqp.Consumer/bin/Debug/net8.0/ExampleMessaging.Amqp.Consumer
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Amqp.Consumer/bin/Debug/net8.0/ExampleMessaging.Amqp.Consumer.deps.json
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Amqp.Consumer/bin/Debug/net8.0/ExampleMessaging.Amqp.Consumer.runtimeconfig.json
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Amqp.Consumer/bin/Debug/net8.0/ExampleMessaging.Amqp.Consumer.dll
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Amqp.Consumer/bin/Debug/net8.0/ExampleMessaging.Amqp.Consumer.pdb
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Amqp.Consumer/obj/Debug/net8.0/ExampleMessaging.Amqp.Consumer.GeneratedMSBuildEditorConfig.editorconfig
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Amqp.Consumer/obj/Debug/net8.0/ExampleMessaging.Amqp.Consumer.AssemblyInfoInputs.cache
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Amqp.Consumer/obj/Debug/net8.0/ExampleMessaging.Amqp.Consumer.AssemblyInfo.cs
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Amqp.Consumer/obj/Debug/net8.0/ExampleMessaging.Amqp.Consumer.csproj.CoreCompileInputs.cache
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Amqp.Consumer/obj/Debug/net8.0/ExampleMessaging.Amqp.Consumer.dll
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Amqp.Consumer/obj/Debug/net8.0/refint/ExampleMessaging.Amqp.Consumer.dll
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Amqp.Consumer/obj/Debug/net8.0/ExampleMessaging.Amqp.Consumer.pdb
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Amqp.Consumer/obj/Debug/net8.0/ExampleMessaging.Amqp.Consumer.genruntimeconfig.cache
+/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Amqp.Consumer/obj/Debug/net8.0/ref/ExampleMessaging.Amqp.Consumer.dll

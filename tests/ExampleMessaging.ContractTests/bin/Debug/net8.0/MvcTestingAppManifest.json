@@ -1,0 +1,4 @@
+{
+  "ExampleMessaging.Publisher.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/home\/den\/git\/example-amqt-mqtt-k6\/src\/ExampleMessaging.Publisher.Api",
+  "ExampleMessaging.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/home\/den\/git\/example-amqt-mqtt-k6\/src\/ExampleMessaging.Shared"
+}
