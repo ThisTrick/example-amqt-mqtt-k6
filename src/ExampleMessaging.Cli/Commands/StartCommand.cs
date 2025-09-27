@@ -135,7 +135,7 @@ public static class StartCommand
         var processInfo = new ProcessStartInfo
         {
             FileName = "docker",
-            Arguments = $"compose -f docker/docker-compose.yml {args}",
+            Arguments = $"compose -f ../../docker/docker-compose.yml {args}",
             RedirectStandardOutput = !detached || verbose,
             RedirectStandardError = !detached || verbose,
             UseShellExecute = false,

@@ -104,8 +104,8 @@ public static class StatusCommand
             {
                 HostName = "localhost",
                 Port = 5672,
-                UserName = "guest",
-                Password = "guest",
+                UserName = "admin",
+                Password = "admin",
                 VirtualHost = "/",
                 RequestedHeartbeat = TimeSpan.FromSeconds(30),
                 AutomaticRecoveryEnabled = true

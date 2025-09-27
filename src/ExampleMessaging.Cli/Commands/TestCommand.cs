@@ -84,8 +84,8 @@ public static class TestCommand
         {
             HostName = "localhost",
             Port = 5672,
-            UserName = "guest",
-            Password = "guest",
+            UserName = "admin",
+            Password = "admin",
             VirtualHost = "/",
             AutomaticRecoveryEnabled = true,
             NetworkRecoveryInterval = TimeSpan.FromSeconds(10)
