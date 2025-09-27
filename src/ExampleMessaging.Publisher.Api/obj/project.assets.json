@@ -1540,7 +1540,9 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "ExampleMessaging.Shared >= 1.0.0",
+      "MQTTnet >= 5.0.1.1416",
       "Microsoft.AspNetCore.OpenApi >= 8.0.19",
+      "RabbitMQ.Client >= 7.1.2",
       "Serilog >= 4.3.0",
       "Serilog.Extensions.Hosting >= 8.0.0",
       "Swashbuckle.AspNetCore >= 6.6.2"
@@ -1587,9 +1589,17 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "MQTTnet": {
+            "target": "Package",
+            "version": "[5.0.1.1416, )"
+          },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
             "version": "[8.0.19, )"
+          },
+          "RabbitMQ.Client": {
+            "target": "Package",
+            "version": "[7.1.2, )"
           },
           "Serilog": {
             "target": "Package",

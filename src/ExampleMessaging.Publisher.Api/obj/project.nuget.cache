@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "EduN13rlsE4/7To2c6rbwNF7PQVIo9w3jLSBIVUjLXggUcmYYYL5v3wl4F1V/7zfVREiDX3OlOv1UhzG2KAk0w==",
+  "dgSpecHash": "GRMFM2vn8jmxRCO9Jj1LKIIbc/P6zlxScLFzlyv6A2gg7j2dB6dNKLZIc1/t00nT3XyjuetCxhGC4AdsXJP9Bg==",
   "success": true,
   "projectFilePath": "/home/den/git/example-amqt-mqtt-k6/src/ExampleMessaging.Publisher.Api/ExampleMessaging.Publisher.Api.csproj",
   "expectedPackageFiles": [
