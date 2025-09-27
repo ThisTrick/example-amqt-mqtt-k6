@@ -1,0 +1,41 @@
+# .NET build artifacts
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+logs/
+
+# Test results
+TestResults/
+
+# Docker
+**/docker-compose.override.yml
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Rider
+.idea/
+*.sln.iml
+
+# Python virtualenv
+.venv/
+venv/
+
+# CLI output
+src/ExampleMessaging.Publisher.Api/logs/
+
+# Ignore test output
+/tests/**/bin/
+/tests/**/obj/
