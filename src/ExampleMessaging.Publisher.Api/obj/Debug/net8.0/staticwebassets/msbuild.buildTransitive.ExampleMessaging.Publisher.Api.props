@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="../buildMultiTargeting/ExampleMessaging.Publisher.Api.props" />
-</Project>

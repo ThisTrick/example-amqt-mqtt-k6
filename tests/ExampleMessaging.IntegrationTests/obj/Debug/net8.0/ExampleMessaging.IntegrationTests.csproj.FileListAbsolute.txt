@@ -1,6 +1,0 @@
-/home/den/git/example-amqt-mqtt-k6/tests/ExampleMessaging.IntegrationTests/bin/Debug/net8.0/CoverletSourceRootsMapping_ExampleMessaging.IntegrationTests
-/home/den/git/example-amqt-mqtt-k6/tests/ExampleMessaging.IntegrationTests/obj/Debug/net8.0/ExampleMessaging.IntegrationTests.csproj.AssemblyReference.cache
-/home/den/git/example-amqt-mqtt-k6/tests/ExampleMessaging.IntegrationTests/obj/Debug/net8.0/ExampleMessaging.IntegrationTests.GeneratedMSBuildEditorConfig.editorconfig
-/home/den/git/example-amqt-mqtt-k6/tests/ExampleMessaging.IntegrationTests/obj/Debug/net8.0/ExampleMessaging.IntegrationTests.AssemblyInfoInputs.cache
-/home/den/git/example-amqt-mqtt-k6/tests/ExampleMessaging.IntegrationTests/obj/Debug/net8.0/ExampleMessaging.IntegrationTests.AssemblyInfo.cs
-/home/den/git/example-amqt-mqtt-k6/tests/ExampleMessaging.IntegrationTests/obj/Debug/net8.0/ExampleMessaging.IntegrationTests.csproj.CoreCompileInputs.cache

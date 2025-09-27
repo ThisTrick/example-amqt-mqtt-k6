@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="../build/ExampleMessaging.Publisher.Api.props" />
-</Project>
