@@ -103,14 +103,14 @@ Based on plan.md structure:
 - [x] T034 Program.cs with DI, logging, configuration in `src/ExampleMessaging.Publisher.Api/Program.cs`
 
 ### AMQP Consumer
-- [ ] T035 [P] AmqpConnectionService in `src/ExampleMessaging.Amqp.Consumer/Services/AmqpConnectionService.cs`
-- [ ] T036 [P] AmqpMessageHandler in `src/ExampleMessaging.Amqp.Consumer/Handlers/AmqpMessageHandler.cs`
-- [ ] T037 [P] Program.cs with hosted service in `src/ExampleMessaging.Amqp.Consumer/Program.cs`
+- [x] T035 [P] AmqpConnectionService in `src/ExampleMessaging.Amqp.Consumer/Services/AmqpConnectionService.cs`
+- [x] T036 [P] AmqpMessageHandler in `src/ExampleMessaging.Amqp.Consumer/Handlers/AmqpMessageHandler.cs`
+- [x] T037 [P] Program.cs with hosted service in `src/ExampleMessaging.Amqp.Consumer/Program.cs`
 
 ### MQTT Consumer  
-- [ ] T038 [P] MqttConnectionService in `src/ExampleMessaging.Mqtt.Consumer/Services/MqttConnectionService.cs`
-- [ ] T039 [P] MqttMessageHandler in `src/ExampleMessaging.Mqtt.Consumer/Handlers/MqttMessageHandler.cs`
-- [ ] T040 [P] Program.cs with hosted service in `src/ExampleMessaging.Mqtt.Consumer/Program.cs`
+- [x] T038 [P] MqttConnectionService in `src/ExampleMessaging.Mqtt.Consumer/Services/MqttConnectionService.cs`
+- [x] T039 [P] MqttMessageHandler in `src/ExampleMessaging.Mqtt.Consumer/Handlers/MqttMessageHandler.cs`
+- [x] T040 [P] Program.cs with hosted service in `src/ExampleMessaging.Mqtt.Consumer/Program.cs`
 
 ### CLI Management Tools
 - [ ] T041 [P] StartCommand for environment startup in `src/ExampleMessaging.Cli/Commands/StartCommand.cs`
