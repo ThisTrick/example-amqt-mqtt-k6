@@ -113,8 +113,8 @@ Based on plan.md structure:
 - [x] T040 [P] Program.cs with hosted service in `src/ExampleMessaging.Mqtt.Consumer/Program.cs`
 
 ### CLI Management Tools
-- [ ] T041 [P] StartCommand for environment startup in `src/ExampleMessaging.Cli/Commands/StartCommand.cs`
-- [ ] T042 [P] TestCommand for k6 scenario execution in `src/ExampleMessaging.Cli/Commands/TestCommand.cs`
+- [x] T041 [P] StartCommand for environment startup in `src/ExampleMessaging.Cli/Commands/StartCommand.cs`
+- [x] T042 [P] TestCommand for k6 scenario execution in `src/ExampleMessaging.Cli/Commands/TestCommand.cs`
 - [ ] T043 [P] StatusCommand for service health monitoring in `src/ExampleMessaging.Cli/Commands/StatusCommand.cs`
 - [ ] T044 [P] Program.cs with command parsing in `src/ExampleMessaging.Cli/Program.cs`
 

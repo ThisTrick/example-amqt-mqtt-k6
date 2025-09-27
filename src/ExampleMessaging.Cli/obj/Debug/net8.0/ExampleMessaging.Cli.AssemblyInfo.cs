@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ExampleMessaging.Cli")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d6f783084ddd263ec8356ac6d6edd8ebbdceb5ae")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+13db622b2dfc0a0da3f82c6350da67b7bc0010bb")]
 [assembly: System.Reflection.AssemblyProductAttribute("ExampleMessaging.Cli")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ExampleMessaging.Cli")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
